@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project1/home_page.dart';
+import 'package:project1/listview_page.dart';
+import 'package:project1/gridview_page.dart';
+
 
 void main() {
   runApp(const MyApp());

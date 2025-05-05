@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:project1/listview_page.dart';
+import 'package:project1/gridview_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -65,8 +66,8 @@ class HomePage extends StatelessWidget {
                 backgroundImage: NetworkImage(
                     "https://res.cloudinary.com/dvsuhuocv/image/upload/v1736877659/bdbfqc16l5k2nhaoc99u.jpg"),
               ),
-              accountName: Text("John Doe"),
-              accountEmail: Text("john.doe@example.com"),
+              accountName: Text("Anindya"),
+              accountEmail: Text("anindya@gmail.com"),
             ),
             ListTile(
               leading: Icon(Icons.home),
@@ -104,10 +105,14 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset("assets/images/flutter.png", height: 150),
+                Image.asset("assets/Untitled.jpeg", height: 150),
                 Text(
                   "Welcome to Flutter",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.teal.shade800),
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal.shade800,
+                  ),
                 ),
                 ElevatedButton.icon(
                   onPressed: () => myAlertDialog("Confirmation", "Do you want to proceed?", context),
@@ -120,6 +125,40 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   ),
                 ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ListviewPage()),
+                    );
+                  },
+                  icon: Icon(Icons.list),
+                  label: Text("Go To List View"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const GridviewPage()),
+                    );
+                  },
+                  icon: Icon(Icons.grid_view),
+                  label: Text("Go To Grid View"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
